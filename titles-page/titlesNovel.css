@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background:  linear-gradient(to top, #171542 ,  #292677 );
+}
+
+html{
+    scroll-behavior: smooth;
+    background: #171542;
+}
+
+.swal-modal{
+    background-color: #6C4AB6;
+}
+
+.swal-title{
+    color: white;
+}
+
+.swal-text{
+    color: white;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 240px;
+    background:  #292677 ;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+
+.sidebar .sidebar-logo .logo .gambar-logo{
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.sidebar .sidebar-logo .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 1;
+    pointer-events: none;
+    transition: all 0.5 ease;
+}
+
+.sidebar .sidebar-logo .logo .bx{
+    color: #fff;
+}
+
+.sidebar-logo .logo i{
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.sidebar-logo .logo .nama-logo{
+    font-size: 20px;
+    font-weight: 400;
+    white-space: nowrap;
+    color: #fff;
+    margin-left: -10px;
+}
+
+.sidebar ul{
+    margin-top: 20px;
+}
+
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: #252e50 ;
+    padding-left: 50px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.sidebar ul li .bx{
+    color: white;
+}
+
+.sidebar ul li .fa{
+    color: white;
+}
+
+.sidebar ul li .bx-search{
+    position: absolute;
+    z-index: 99;
+    color: white;
+    font-size: 18px;
+    transition: all 0.5s ease;
+}
+
+.sidebar ul li .bx-search:hover {
+    background: #fff;
+    color: black;
+}
+
+.sidebar ul li a span:hover{
+    /* color: #1d1b31; */
+    color: #8D9EFF;
+}
+
+.sidebar ul li a {
+    color: black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+    color: #11101d;
+    background: #252e50;
+}
+
+.sidebar ul li i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sidebar ul li span{
+    color: #fff;
+}
+
+.sidebar .nama-menu{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+
+.sidebar .info-profil{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar .info-profil .profil{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: none;
+    transition: all 0.4s ease;
+    background: #171542;
+}
+
+.sidebar .info-profil .profil .bx{
+    color: #fff;
+}
+
+.info-profil .profil .detail-profil{
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    pointer-events: auto;
+    white-space: nowrap;
+}
+
+.profil .detail-profil img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.profil .detail-profil .nama-user{
+    margin-left: 10px;
+}
+
+.profil .detail-profil .nama{
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.profil .detail-profil .status{
+    font-size: 12px;
+    color: #fff;
+}
+
+.profil #log-out{
+    position: absolute;
+    left: 88%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    background: none;
+}
+
+.halaman-novels{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+}
+
+.sidebar ~ .halaman-novels{
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
+.halaman-novels h3{
+    font-family: 'League Spartan', sans-serif;
+    font-size: 200%;
+    margin-top: 50px;
+    margin-left: 50px;
+    color: #fff;
+}
+
+/* Halaman Novel */
+
+.kumpulan-novels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* mengatur agar kedua elemen berada di tengah */
+}
+
+.novel-card{
+    display: flex;
+    align-items: center;
+    width: 75vw;
+    max-width: 400px;
+    padding: 50px 30px 50px 20px;
+    background: #ffffff;
+    border-radius: 24px;
+    margin-left: 15vh;
+    margin-top: 10vh;
+    box-sizing: border-box;
+    
+}
+
+.novel-card img{
+    max-width: 180px;
+    width: 18vw;
+    height: 200px;
+    object-fit: cover;
+    margin-left: -60px;
+    margin-right: 30px;
+    border-radius: inherit;
+    box-shadow: 0 60px 40px rgb(0 0 0 / 8%);
+}
+
+.novel-card h2{
+    font-size: 22px;
+    margin-right: 30px;
+    margin-bottom: -4vh;
+}
+
+.novel-card h3{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(0 0 0 / 90%);
+    margin-right: 30px;
+    margin-bottom: 2vh;
+}
+
+.novel-card p{
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(0 0 0 / 70%);
+    margin-bottom: 24px;
+}
+
+.novel-card button{
+    border: 0;
+    background: linear-gradient(90deg,#8D72E1, #8D72E1);
+    color: #f8f8f8;
+    font-family: inherit;
+    padding: 16px 26px;
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+@media (width <= 740px)
+{
+    .novel-card{
+        margin: 0 40px;
+        padding-left: 50px;
+        padding-right: 50px;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .novel-card h2{
+        margin-right: 0;
+        font-size: 26px;
+    }
+
+    .novel-card img{
+        margin: -100px 0 30px 0;
+        width: 100%;
+        max-width: 1000px;
+    }
+}

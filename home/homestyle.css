@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap');
+
+:root {
+    --rich-black-fogra-29: hsl(225, 25%, 9%);
+    --rich-black-fogra-39: hsl(170, 21%, 5%);
+    --raisin-black: hsl(228, 13%, 15%);
+    --eerie-black: hsl(207, 19%, 11%);
+    --light-gray: hsl(0, 3%, 80%);
+    --gunmetal-1: hsl(229, 15%, 21%);
+    --gunmetal-2: hsl(216, 22%, 18%);
+    --gainsboro: hsl(0, 7%, 88%);
+    --citrine: hsl(57, 97%, 45%);
+    --xiketic: hsl(253, 21%, 13%);
+    --gray-x: hsl(0, 0%, 74%);
+    --white: hsl(0, 100%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --jet: hsl(0, 0%, 20%);
+    --live-indicator-shadow: hsla(0, 79%, 63%, 0.5);
+    --rich-black-fogra-30:   hsl(219, 32%, 10%);
+    --rich-black-fogra-29:   hsl(222, 25%, 10%);
+    --live-indicator:        hsl(0, 79%, 63%);
+    --oxford-blue-50:        hsla(218, 39%, 14%, 0.8);
+    --oxford-blue:           hsl(218, 39%, 14%);
+    --light-azure:           hsl(214, 84%, 56%);
+    --off-white:             hsl(0, 0%, 88%);
+    --yellow:                hsl(45, 100%, 54%);
+    --white:                 hsl(0, 0%, 100%);
+    --azure:                 hsl(211, 100%, 50%);
+
+
+    --ff-poppins: 'Poppins', sans-serif;
+
+    --fs-1: 36px;
+    --fs-2: 32px;
+    --fs-3: 30px;
+    --fs-4: 24px;
+    --fs-5: 20px;
+    --fs-6: 18px;
+    --fs-7: 16px;
+    --fs-8: 15px;
+    --fs-9: 14px;
+    --fs-10: 13px;
+    --fs-11: 12px;
+    --fs-12: 11px;
+    --ff-inter: "Inter", sans-serif;
+
+    --section-heading: 40px;
+    --fs-lg:           22px;
+    --fs-md:           17px;
+    --fs-sm:           14px;
+    --fs-x-sm:         12px;
+
+    --fw-7: 700;
+    --fw-6: 600;
+    --fw-5: 500;
+
+    --fw-500: 500;
+    --fw-700: 700;
+
+    --transition-1: 0.15s ease;
+    --transition-2: 0.25s ease-in;
+
+    --section-padding: 100px;
+
+    --px: 120px;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.swal-modal{
+    background-color: #6C4AB6;
+}
+
+.swal-title{
+    color: white;
+}
+
+.swal-text{
+    color: white;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #171542;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 240px;
+    background:  #292677;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+
+.sidebar .sidebar-logo .logo .gambar-logo{
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.sidebar .sidebar-logo .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 1;
+    pointer-events: none;
+    transition: all 0.5 ease;
+}
+
+.sidebar .sidebar-logo .logo .bx{
+    color: #fff;
+}
+
+.sidebar-logo .logo i{
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.sidebar-logo .logo .nama-logo{
+    font-size: 20px;
+    font-weight: 400;
+    white-space: nowrap;
+    color: #fff;
+    margin-left: -10px;
+}
+
+.sidebar ul{
+    margin-top: 20px;
+}
+
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: #252e50 ;
+    padding-left: 50px;
+    font-size: 18px;
+    color: white;
+    
+}
+
+.sidebar ul li .bx{
+    color: white;
+}
+
+.sidebar ul li .fa{
+    color: white;
+}
+
+.sidebar ul li .bx-search{
+    position: absolute;
+    z-index: 99;
+    color: white;
+    font-size: 18px;
+    transition: all 0.5s ease;
+}
+
+.sidebar ul li .bx-search:hover {
+    background: #fff;
+    color :black;
+}
+
+.sidebar ul li a span:hover{
+    /* color: #1d1b31; */
+    color: #8D9EFF;
+}
+
+.sidebar ul li a {
+    color: black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+    color: #11101d;
+    background: #252e50;
+}
+
+.sidebar ul li i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sidebar ul li span{
+    color: #fff;
+}
+
+.sidebar .nama-menu{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+
+.sidebar .info-profil{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar .info-profil .profil{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: none;
+    transition: all 0.4s ease;
+    background: #171542  ;
+}
+
+.sidebar .info-profil .profil .bx{
+    color: #fff;
+}
+
+.info-profil .profil .detail-profil{
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    pointer-events: auto;
+    white-space: nowrap;
+}
+
+.profil .detail-profil img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.profil .detail-profil .nama-user{
+    margin-left: 10px;
+}
+
+.profil .detail-profil .nama{
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.profil .detail-profil .status{
+    font-size: 12px;
+    color: #fff;
+}
+
+.profil #log-out{
+    position: absolute;
+    left: 88%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    background: none;
+}
+
+.halaman-home{
+    position: absolute;
+    background: linear-gradient(to top,  #171542  ,  #292677 ) ;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+    
+}
+
+.sidebar ~ .halaman-home{
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
+.halaman-home h3{
+    font-family: 'League Spartan', sans-serif;
+    font-size: 300%;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-left: 50px;
+    color: #fff;
+}
+
+/* Popular Title */
+
+.popular-title{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #151515), url(img/popular-title-novel-bg-1.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 75vh;
+    padding: 50px 100px;
+    position: absolute;
+    right:  20px;
+    bottom: 60px;
+    left:   80px;
+    border-radius: 1%;
+}
+
+
+.halaman-home .popular-title .sinopsis{
+    width: 400px;
+    color: #d3d3d3;
+    margin: 30px 0;
+    font-weight: 900;
+    background-color: #222;
+    padding: 10px 0px 10px 10px;
+    border-radius: 10px;
+    opacity: 0.8;
+    transition: 0.5s;
+    margin-bottom: -10vh;
+    margin-right: 100vh;
+}
+
+.halaman-home .popular-title .popular-title-box .popular-title-img img{
+    width: 40vh;
+}
+
+.halaman-home .popular-title .sinopsis:hover{
+    opacity: 1;
+}
+
+.halaman-home .popular-title {
+    display: flex;
+    align-items: center;
+}
+
+.halaman-home .popular-title .popular-title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.halaman-home .popular-title .popular-title-box .popular-title-img {
+    height: 100%;
+}
+
+.halaman-home .popular-title .popular-title-box .popular-title-konten {
+    width: calc(100% - 350px);
+    padding-left: 1px;
+}
+
+.halaman-home .info-genre a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-right: 10px;
+
+}
+
+.halaman-home .popular-title .popular-title-box .popular-title-konten .detail-rating{
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.halaman-home .popular-title .genre{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #F7B731;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.halaman-home .popular-title .genre-fill{
+    background-color: #222;
+}
+
+.popular-title .info-popular-title .judul-popular-title {
+    font-size: 40px;
+    margin-bottom: 5px;
+    margin-top: -18vh;
+    color: #fff;
+    position: absolute;
+}
+
+.halaman-home .popular-title .popular-title-box .detail-action .btn-read{
+    display: inline-block;
+    font-size: 1em;
+    padding: 1em 2em;
+    margin-top: 110px;
+    margin-bottom: 60px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ff0081;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+    position: absolute;
+}
+
+.halaman-home .popular-title .popular-title-box .detail-action .btn-read:focus{
+    outline: 0;
+}
+
+.halaman-home .popular-title .popular-title-box .detail-action .btn-read:before,
+.halaman-home .popular-title .popular-title-box .detail-action .btn-read:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+}
+
+.halaman-home .popular-title .popular-title-box .detail-action .btn-read:before{
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.halaman-home .popular-title .popular-title-box .detail-action .btn-read:after{
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.halaman-home .popular-title .popular-title-box .detail-action .btn-read:active{
+    transform: scale(0.9);
+    background-color: #e60074;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+.halaman-home .popular-title .popular-title-box .detail-action .btn-read.animte:before{
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.halaman-home .popular-title .popular-title-box .detail-action .btn-read.animte:after{
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+
+.novels-latest-update{
+    margin-bottom: 60px;
+    margin-top: 90vh;
+    background: #171542;
+    padding: 0 var(--px);
+}
+
+.latest-update{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:  #292677;
+    padding: 20px 30px;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.novels-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.novels-card {
+    --scale: 0.8;
+    cursor: pointer;
+}
+
+.novels-card .novels-head{
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.novels-card:hover .card-img {
+    transform: scale(1.1);
+}
+
+/* .novels-card .novels-overlay{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    backdrop-filter: blur(5px);
+} */
+
+.novels-card:hover .novels-overlay{
+    opacity: 1;
+}
+
+.novels-card .novels-bookmark,
+.novels-card .novels-rating{
+    position: absolute;
+    top: 15px;
+    padding: 6px;
+    border-radius: 10px;
+    color: var(--light-azure);
+    transform: scale(var(--scale));
+}
+
+.novels-card .novels-bookmark{
+    background: var(--oxford-blue);
+    left: 15px;
+}
+
+.novels-card .novels-bookmark:hover{
+    color: var(--yellow);
+}
+
+.novels-card .novels-rating{
+    display: flex;
+    align-items: center;
+    right: 15px;
+    background: var(--oxford-blue-50);
+}
+
+.novels-card .novels-rating span{
+    color: var(--white);
+    font-size: 13px;
+    font-weight: var(--fw-5);
+    margin-left: 5px;
+}
+
+.novels-card ion-icon{
+    font-size: 16px;
+    display: block;
+    --ionicon-stroke-width: 50px;
+}
+
+.novels-card .novels-read{
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--scale));
+}
+
+.novels-card .novels-read ion-icon{
+    font-size: 60px;
+    --ionicon-stroke-width: 20px;
+}
+
+.novels-card:hover :is(.novels-bookmark, .novels-rating, .novels-read){
+    --scale: 1;
+}
+
+.novels-card .novels-title{
+    font-size: 30px;
+    font-weight: var(--fw-5);
+    margin-bottom: 5px;
+    margin-top: 10px;
+    color: var(--white);
+    text-shadow: 2px 0 2px #0007;
+    margin-left: 10px;
+}
+
+.novels-card:hover .novels-title{
+    color: var(--light-azure);
+}
+
+.novels-card .novels-info{
+    display: flex;
+    font-size: var(--fs-x-sm);
+    font-weight: var(--fw-5);
+}
+
+.novels-card .genre, .year{
+    margin-right: 1px;
+    color: var(--white);
+    margin-bottom: 10vh;
+    margin-left: 10px;
+}
+
+
+

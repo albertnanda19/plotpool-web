@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap');
+
+/* :root {
+    --rich-black-fogra-29: hsl(225, 25%, 9%);
+    --rich-black-fogra-39: hsl(170, 21%, 5%);
+    --raisin-black: hsl(228, 13%, 15%);
+    --eerie-black: hsl(207, 19%, 11%);
+    --light-gray: hsl(0, 3%, 80%);
+    --gunmetal-1: hsl(229, 15%, 21%);
+    --gunmetal-2: hsl(216, 22%, 18%);
+    --gainsboro: hsl(0, 7%, 88%);
+    --citrine: hsl(57, 97%, 45%);
+    --xiketic: hsl(253, 21%, 13%);
+    --gray-x: hsl(0, 0%, 74%);
+    --white: hsl(0, 100%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --jet: hsl(0, 0%, 20%);
+    --live-indicator-shadow: hsla(0, 79%, 63%, 0.5);
+    --rich-black-fogra-30:   hsl(219, 32%, 10%);
+    --rich-black-fogra-29:   hsl(222, 25%, 10%);
+    --live-indicator:        hsl(0, 79%, 63%);
+    --oxford-blue-50:        hsla(218, 39%, 14%, 0.8);
+    --oxford-blue:           hsl(218, 39%, 14%);
+    --light-azure:           hsl(214, 84%, 56%);
+    --off-white:             hsl(0, 0%, 88%);
+    --yellow:                hsl(45, 100%, 54%);
+    --white:                 hsl(0, 0%, 100%);
+    --azure:                 hsl(211, 100%, 50%);
+
+
+    --ff-poppins: 'Poppins', sans-serif;
+
+    --fs-1: 36px;
+    --fs-2: 32px;
+    --fs-3: 30px;
+    --fs-4: 24px;
+    --fs-5: 20px;
+    --fs-6: 18px;
+    --fs-7: 16px;
+    --fs-8: 15px;
+    --fs-9: 14px;
+    --fs-10: 13px;
+    --fs-11: 12px;
+    --fs-12: 11px;
+    --ff-inter: "Inter", sans-serif;
+
+    --section-heading: 40px;
+    --fs-lg:           22px;
+    --fs-md:           17px;
+    --fs-sm:           14px;
+    --fs-x-sm:         12px;
+
+    --fw-7: 700;
+    --fw-6: 600;
+    --fw-5: 500;
+
+    --fw-500: 500;
+    --fw-700: 700;
+
+    --transition-1: 0.15s ease;
+    --transition-2: 0.25s ease-in;
+
+    --section-padding: 100px;
+
+    --px: 120px;
+
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.swal-modal{
+    background-color: #6C4AB6;
+}
+
+.swal-title{
+    color: white;
+}
+
+.swal-text{
+    color: white;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #171542;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 240px;
+    background:  #292677;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+
+.sidebar .sidebar-logo .logo .gambar-logo{
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.sidebar .sidebar-logo .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 1;
+    pointer-events: none;
+    transition: all 0.5 ease;
+}
+
+.sidebar .sidebar-logo .logo .bx{
+    color: #fff;
+}
+
+.sidebar-logo .logo i{
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.sidebar-logo .logo .nama-logo{
+    font-size: 20px;
+    font-weight: 400;
+    white-space: nowrap;
+    color: #fff;
+    margin-left: -10px;
+}
+
+.sidebar ul{
+    margin-top: 20px;
+}
+
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: #252e50 ;
+    padding-left: 50px;
+    font-size: 18px;
+    color: white;
+    
+}
+
+.sidebar ul li .bx{
+    color: white;
+}
+
+.sidebar ul li .fa{
+    color: white;
+}
+
+.sidebar ul li .bx-search{
+    position: absolute;
+    z-index: 99;
+    color: white;
+    font-size: 18px;
+    transition: all 0.5s ease;
+}
+
+.sidebar ul li .bx-search:hover {
+    background: #fff;
+    color :black;
+}
+
+.sidebar ul li a span:hover{
+    /* color: #1d1b31; */
+    color: #8D9EFF;
+}
+
+.sidebar ul li a {
+    color: black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+    color: #11101d;
+    background: #252e50;
+}
+
+.sidebar ul li i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sidebar ul li span{
+    color: #fff;
+}
+
+.sidebar .nama-menu{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+
+.sidebar .info-profil{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar .info-profil .profil{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: none;
+    transition: all 0.4s ease;
+    background: #171542  ;
+}
+
+.sidebar .info-profil .profil .bx{
+    color: #fff;
+}
+
+.info-profil .profil .detail-profil{
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    pointer-events: auto;
+    white-space: nowrap;
+}
+
+.profil .detail-profil img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.profil .detail-profil .nama-user{
+    margin-left: 10px;
+}
+
+.profil .detail-profil .nama{
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.profil .detail-profil .status{
+    font-size: 12px;
+    color: #fff;
+}
+
+.profil #log-out{
+    position: absolute;
+    left: 88%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    background: none;
+}
+
+.halaman-home{
+    position: absolute;
+    background: linear-gradient(to top,  #171542  ,  #292677 ) ;
+    height: 100%;
+    width: calc(100% - 728px);
+    left: 728px;
+    transition: all 0.5s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar ~ .halaman-home{
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
+.halaman-home .container{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.halaman-home .container h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.halaman-home .container .input-box{
+    position: relative;
+}
+
+.halaman-home .container input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.halaman-home .container input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
+.halaman-home .container .input-sampul{
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    color: #333;
+    border-radius: 4px;
+}
+
+.halaman-home .container label{
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.halaman-home .container input:focus ~ label,
+.halaman-home .container input:valid ~ label{
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.halaman-home .container .rating-usia{
+    margin-top: 30px;
+}
+
+.halaman-home .container select,option{
+    background-color: #171542;
+    color: #fff;
+}
+
+
+.halaman-home .container textarea{
+    display: relative;
+    height: 100px;
+    width: 100%;
+    background-color: #171542;
+    color: white;
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 3em;
+    resize: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none; 
+	margin: 0; 
+}
+
+.halaman-home .container button{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    background-color: #ffffff00;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+.halaman-home .container button:hover{
+    background: #03e9f4;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
+

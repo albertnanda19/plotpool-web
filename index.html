@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Nunito:ital,wght@0,400;0,700;1,400&family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo-shortcut.png" >
+    <title>Sign In</title>
+</head>
+<body>
+    <!-- <script src="script.js"></script> -->
+    <div class="login">
+        <form action="function_php/login.php" method="POST" class="login-form">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+                <h3>PlotPool</h3>
+            </div>
+            <ul class="menu-login">
+                <li class="login-menu-nav active">
+                    <a href="#">Sign In</a>
+                </li>
+                <li class="login-menu-nav">
+                    <a target="_self" href="sign-up/index.html">Sign Up</a>
+                </li>
+            </ul>
+
+            <label for="input-username" class="label-input">Username</label>
+            <input type="text" id="input-username" class="input-login" name="username">
+
+            <label for="input-password" class="label-input">Password</label>
+            <input type="password" id="input-password" class="input-login" name="password">
+
+            <!-- <button class="submit-btn" onclick="signIn()">Sign In</button> -->
+            <input type="submit" class="submit-btn" value="Sign In">
+        </form>
+        <a href="#" class="lupa-pass">Lupa Password ?</a><br><br>
+    </div>
+</body>
+</html>
