@@ -147,11 +147,6 @@
 
                     $koneksi->close();
                 ?>
-
-                <!-- <a href="../info_novel/index.php?id= <?php $randomNovelID ?>">
-                    <i class="bx bx-crosshair"></i>
-                    <span class="nama-menu">Random</span>
-                </a> -->
             </li>
             <li>
                 <a href="../about-developers-page/index.php">
@@ -164,7 +159,7 @@
                 if ($_SESSION['username'] === $admin) {
                     ?>
                     <li>
-                        <a href="upload_novel/index.php">
+                        <a href="../upload_novel/index.php">
                             <i class="bx bx-cloud-upload"></i>
                             <span class="nama-menu">Uploads</span>
                         </a>
@@ -261,7 +256,6 @@
             const keyword = searchInput.value.trim();
             if (keyword !== '') {
                 window.location.href = `../titles-page/index.php?search=${encodeURIComponent(keyword)}`;
-                // window.location.href = '../../titles-pageww/index.php?search=', ${encodeURIComponent(keyword)};
             }
         });
     </script>
