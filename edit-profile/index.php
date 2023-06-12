@@ -8,24 +8,6 @@
 
     $username = $_SESSION['username'];
 
-    function deleteProfilePictureFile($filePath) {
-        if (file_exists($filePath)) {
-            // Delete the file
-            if (unlink($filePath)) {
-                echo <<<HTML
-                    <script>
-                        alert
-                    </script>
-                HTML
-                ;
-            } else {
-                echo "Gagal menghapus foto profil.";
-            }
-        } else {
-            echo "File foto profil tidak ditemukan.";
-        }
-    }
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
             $file = $_FILES['profile_picture'];
@@ -67,6 +49,18 @@
 
                 $result = mysqli_query($koneksi, $query);
 
+                function deleteProfilePictureFile($filePath) {
+                    if (file_exists($filePath)) {
+                        if (unlink($filePath)) {
+                            echo "";
+                        } else {
+                            echo "Gagal menghapus foto profil.";
+                        }
+                    } else {
+                        echo "File foto profil tidak ditemukan.";
+                    }
+                }
+
                 if ($result && mysqli_num_rows($result) > 0) {
                     $row = mysqli_fetch_assoc($result);
                     $profilePicture = $row['profile_photo'];
@@ -77,12 +71,19 @@
                 }
 
                 $query = "UPDATE users SET profile_photo = '$uploadFilePath' WHERE username = '$username'";
-                $result = mysqli_query($koneksi, $query);
-                if ($result) {
-                    echo "Foto profil berhasil diperbarui.";
+                $hasil_update_profile = mysqli_query($koneksi, $query);
+                // if ($result) {
+                //     echo "Foto profil berhasil diperbarui.";
+                // } else {
+                //     echo "Terjadi kesalahan: " . mysqli_error($koneksi);
+                // }
+
+                if ($hasil_update_profile) {
+                    $profileBerhasilDiperbarui = true;
                 } else {
-                    echo "Terjadi kesalahan: " . mysqli_error($koneksi);
+                    $profileBerhasilDiperbarui = false;
                 }
+                
 
                 mysqli_close($koneksi);
             } else {
@@ -100,14 +101,19 @@
                 exit();
             }
 
-            $query = "UPDATE users SET status = '$status' WHERE username = '$username'";
+            $query_status = "UPDATE users SET status = '$status' WHERE username = '$username'";
 
-            $result = mysqli_query($koneksi, $query);
+            $hasil_status = mysqli_query($koneksi, $query_status);
 
-            if ($result) {
-                echo "Status berhasil diperbarui.";
+
+            if ($hasil_status) 
+            {
+                $statusBerhasilDiperbarui = true;
+            }elseif($hasil_update_profile)
+            {
+                $profileBerhasilDiperbarui = true;
             } else {
-                echo "Terjadi kesalahan: " . mysqli_error($koneksi);
+                $statusBerhasilDiperbarui = false;
             }
 
             mysqli_close($koneksi);
@@ -121,27 +127,27 @@
                 exit();
             }
 
-            $query = "SELECT profile_photo FROM users WHERE username = '$username'";
+            $query_profile = "SELECT profile_photo FROM users WHERE username = '$username'";
 
-            $result = mysqli_query($koneksi, $query);
+            $hasil_profile = mysqli_query($koneksi, $query_profile);
 
-            if ($result && mysqli_num_rows($result) > 0) {
-                $row = mysqli_fetch_assoc($result);
+            if ($hasil_profile && mysqli_num_rows($hasil_profile) > 0) {
+                $row = mysqli_fetch_assoc($hasil_profile);
                 $profilePicture = $row['profile_photo'];
 
-                if (!empty($profilePicture)) {
-                    deleteProfilePictureFile($profilePicture);
-                }
+                // if (!empty($profilePicture)) {
+                //     deleteProfilePictureFile($profilePicture);
+                // }
 
-                $query = "UPDATE users SET profile_photo = '' WHERE username = '$username'";
+                $query_profile = "UPDATE users SET profile_photo = '' WHERE username = '$username'";
 
-                $result = mysqli_query($koneksi, $query);
+                $hasil_profile = mysqli_query($koneksi, $query_profile);
 
-                if ($result) {
-                    echo "Foto profil berhasil dihapus.";
-                } else {
-                    echo "Terjadi kesalahan: " . mysqli_error($koneksi);
-                }
+                // if ($hasil_profile) {
+                //     echo "Foto profil berhasil dihapus.";
+                // } else {
+                //     echo "Terjadi kesalahan: " . mysqli_error($koneksi);
+                // }
             }
 
             mysqli_close($koneksi);
@@ -180,164 +186,181 @@
     mysqli_close($koneksi);
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PlotPool</title>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="../function_js/script.js"></script>
-        <link rel="stylesheet" href="editProfile.css">
-        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Nunito:ital,wght@0,400;0,700;1,400&family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="img/logo-shortcut.png" >
-    </head>
-    <body>
-        <div class="halaman-info">
-            <div class="container">
-                    <div class="profile-picture">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlotPool</title>
+    <link rel="stylesheet" href="editProfile.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Nunito:ital,wght@0,400;0,700;1,400&family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/logo-shortcut.png" >
+</head>
+<body>
+    <div class="halaman-info">
+        <div class="container">
+            <span class="background"></span>
+            <span class="centering">
+                <form method="POST" enctype="multipart/form-data" class="form-box" id="profile-picture-form">
+                    <span class="header">
                         <?php
                             if (isset($profilePicture) && !empty($profilePicture)) {
-                                echo '<img id="foto-profil" src="' . $profilePicture . '" alt="" class="foto-profil">';
+                                echo '<img id="foto-profil" src="' . $profilePicture . '" onclick="direct()" alt="" class="foto-profil">';
                             } else {
-                                echo '<img id="foto-profil" src="img/no-profile.png" alt="" class="foto-profil">';
+                                echo '<img id="foto-profil" src="img/no-profile.png"" onclick="direct()" alt="" class="foto-profil">';
                             }
                         ?>
+                        <h1><?php echo $username; ?></h1>
+                    </span>
+                    <div class="input-profile">
+                        <input type="file" class="upload-profile" id="profile-picture-input" name="profile_picture" onchange="handleFileInput(event)">
+                        <button type="submit" class="simpan-profil" name="submit-picture">Simpan Foto Profil</button>
+                        <button type="submit" class="hapus-profil" name="delete-picture">Hapus Foto Profil</button>
                     </div>
-                <form method="POST" enctype="multipart/form-data" id="profile-picture-form">
-                    <input type="file" id="profile-picture-input" name="profile_picture" onchange="handleFileInput(event)">
-                    <button type="submit" name="submit-picture">Simpan Foto Profil</button>
-                    <button type="submit" name="delete-picture">Hapus Foto Profil</button>
-                </form>
-                <div class="user-name">
-                    <p><span id="side-nama-user" class="nama-user"></span></p><br>
-                    <!-- <input type="text" id="kirim-status" name="user-status"> -->
-                </div>
-                <form method="POST" id="status-form">
-                    <div class="user-status">
-                        <input type="text" id="kirim-status" name="user-status" placeholder="Status">
-                        <button type="submit" name="submit-status">Ganti Status</button>
+                    <div class="box-input">
+                        <form method="POST" id="status-form">
+                            <input type="text" id="kirim-status" name="user-status" placeholder="Status">
+                            <input type="submit" name="submit-status" class="submit-status" value="Ganti Status">
+                        </form>
                     </div>
                 </form>
+            </span>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo">
+                <img class="gambar-logo" src="img/logo.png" alt="">
+                <div class="nama-logo">PlotPool</div>
             </div>
         </div>
-        <div class="sidebar">
-            <div class="sidebar-logo">
-                <div class="logo">
-                    <img class="gambar-logo" src="img/logo.png" alt="">
-                    <div class="nama-logo">PlotPool</div>
-                </div>
-            </div>
 
-            <ul class="daftar-menu">
-                <li class="pencarian">
-                    <i class="bx bx-search"></i>
+        <ul class="daftar-menu">
+            <li class="pencarian">
+                <i class="bx bx-search"></i>
+                <form id="searchForm" action="../titles-page/index.php" method="get">
                     <input type="text" placeholder="Search Novel...">
-                </li>
-                <li>
-                    <a href="../home/index.php">
-                        <i class='bx bx-home'></i>
-                        <span class="nama-menu" onclick="toHome()">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="../titles-page/index.php">
-                        <i class="bx bx-book-open"></i>
-                        <span class="nama-menu" onclick="toTitles()">Title</span>
-                    </a>
-                </li>
-                <li>
-                    <?php 
-                        $koneksi = new mysqli("localhost", "root", "", "database");
+                </form>
+            </li>
+            <li>
+                <a href="../home/index.php">
+                    <i class='bx bx-home'></i>
+                    <span class="nama-menu" onclick="toHome()">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="../titles-page/index.php">
+                    <i class="bx bx-book-open"></i>
+                    <span class="nama-menu" onclick="toTitles()">Title</span>
+                </a>
+            </li>
+            <li>
+                <?php 
+                    $koneksi = new mysqli("localhost", "root", "", "database");
 
-                        if($koneksi->connect_error)
+                    if($koneksi->connect_error)
                         {
                             die("Koneksi gagal: " . $koneksi->connect_error);
                         }
 
-                        $query = "SELECT id FROM novel";
-                        $result = $koneksi->query($query);
+                    $query = "SELECT id FROM novel";
+                    $result = $koneksi->query($query);
 
-                        if($result)
+                    if($result)
+                    {
+                        if($result->num_rows > 0)
                         {
-                            if($result->num_rows > 0)
+                            $novelID = [];
+
+                            while ($row = $result->fetch_assoc())
                             {
-                                $novelID = [];
-
-                                while ($row = $result->fetch_assoc())
-                                {
-                                    $novelID[] = $row['id'];
-                                }
-
-                                $result->free();
-
-                                shuffle($novelID);
-
-                                $randomNovelID = $novelID[0];
-
-                                echo '<a href="../info_novel/index.php?id=' . $randomNovelID . '">';
-                                echo '<i class="bx bx-crosshair"></i>';
-                                echo '<span class="nama-menu">Random</span>';
-                                echo '</a>';
+                                $novelID[] = $row['id'];
                             }
+
+                            $result->free();
+
+                            shuffle($novelID);
+
+                            $randomNovelID = $novelID[0];
+
+                            echo '<a href="../info_novel/index.php?id=' . $randomNovelID . '">';
+                            echo '<i class="bx bx-crosshair"></i>';
+                            echo '<span class="nama-menu">Random</span>';
+                            echo '</a>';
+                        }
                         }else{
                             echo "<p>Terjadi kesalahan saat menjalankan query" . $koneksi->error . "</p>";
                         }
 
                         $koneksi->close();
-                    ?>
-                </li>
+                ?>
+            </li>
+            <li>
+                <a href="../about-developers-page/index.php">
+                    <i class="fa fa-info"></i>
+                    <span class="nama-menu">About Us</span>
+                </a>
+            </li>
+            <?php
+                $admin = "adminplotpool"; 
+                if ($_SESSION['username'] === $admin) {
+            ?>
                 <li>
-                    <a href="../about-developers-page/index.php">
-                        <i class="fa fa-info"></i>
-                        <span class="nama-menu">About Us</span>
+                    <a href="../upload_novel/index.php">
+                        <i class="bx bx-cloud-upload"></i>
+                        <span class="nama-menu">Uploads</span>
                     </a>
                 </li>
-            </ul>
-
-            <div class="info-profil">
-                <div class="profil">
-                    <div class="detail-profil">
-                        <!-- <img src="img/no-profile.png" alt="img/no-profile.png"> -->
-                        <?php
-                            if (isset($profilePicture) && !empty($profilePicture)) {
-                                echo '<img id="foto-profil" src="../profile_photos/' . $profilePicture . '" alt="" class="foto-profil">';
-                            } else {
-                                echo '<img id="foto-profil" src="img/no-profile.png" alt="" class="foto-profil">';
-                            }
-                        ?>
-                        <div class="nama-user">
-                            <div class="nama" id="username-id"><div class="nama"><?php echo $username; ?></div></div>
-                            <div class="status"><?php echo $status; ?></div>
-                        </div>
+            <?php
+                    }
+            ?>
+        </ul>
+        <div class="info-profil">
+            <div class="profil">
+                <div class="detail-profil">
+                    <?php
+                        if (isset($profilePicture) && !empty($profilePicture)) {
+                            echo '<img id="foto-profil" src="../profile_photos/' . $profilePicture . '" alt="" class="foto-profil">';
+                        } else {
+                            echo '<img id="foto-profil" src="img/no-profile.png" alt="" class="foto-profil">';
+                        }
+                    ?>
+                    <div class="nama-user">
+                        <div class="nama" id="username-id"><div class="nama"><?php echo $username; ?></div></div>
+                        <div class="status"><?php echo $status; ?></div>
                     </div>
-                    <i class='bx bx-log-out cursor-pointer' id="log-out" onclick="logout()"></i>
                 </div>
-            </div>  
-        </div>
+                <i class='bx bx-log-out cursor-pointer' id="log-out" onclick="logout()"></i>
+            </div>
+        </div>  
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../function_js/script.js"></script>
+    <script>
+        function direct()
+        {
+            window.location.href = '../edit-profile/index.php';
+        }
+
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = searchForm.querySelector('input[type="text"]');
+
+        searchForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const keyword = searchInput.value.trim();
+            if (keyword !== '') {
+                window.location.href = `../titles-page/index.php?search=${encodeURIComponent(keyword)}`;
+            }
+        });
 
         
-        
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script>
-            function handleFileInput(event) {
-                const file = event.target.files[0];
-                const reader = new FileReader();
-
-                reader.onload = function(e) {
-                    const img = document.getElementById('foto-profil');
-                    img.src = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-            function direct()
-            {
-                window.location.href = '../edit-profile/index.php';
-            }
-        </script>
-    </body>
+    </script>
+</body>
 </html>

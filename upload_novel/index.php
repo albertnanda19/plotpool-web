@@ -1,8 +1,16 @@
 <?php
     session_start();
 
+    $admin = "adminplotpool";
+
     if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
         header("Location: ../index.html");
+        exit();
+    }
+
+    if($_SESSION['username'] != $admin)
+    {
+        header("Location: ../home/index.php");
         exit();
     }
 
@@ -156,6 +164,19 @@
                     <span class="nama-menu">About Us</span>
                 </a>
             </li>
+            <?php
+                $admin = "adminplotpool"; 
+                if ($_SESSION['username'] === $admin) {
+                    ?>
+                    <li>
+                        <a href="../upload_novel/index.php">
+                            <i class="bx bx-cloud-upload"></i>
+                            <span class="nama-menu">Uploads</span>
+                        </a>
+                    </li>
+                    <?php
+                }
+            ?>
         </ul>
 
         <div class="info-profil">

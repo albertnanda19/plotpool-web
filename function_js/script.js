@@ -1,17 +1,6 @@
-function seeMore(){
-    window.location.href = "../visit-novel/index.php";
-};
-
-function toAboutus(){
-    window.location.href = "../about-developers-page/index.php";
-}
-
-function toHome(){
-    window.location.href = "../home/index.php";
-}
-
-function toTitles(){
-    window.location.href = "../titles-page/index.php";
+function directPopularTitle()
+{
+    window.location.href = "../popularTitle/index.php";
 }
 
 document.getElementById("log-out").addEventListener("click", logout);
@@ -56,3 +45,4 @@ searchForm.addEventListener('submit', function(event) {
         window.location.href = `../titles-page/index.php?search=${encodeURIComponent(keyword)}`;
     }
 });
+

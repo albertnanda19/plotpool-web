@@ -91,7 +91,9 @@
         <ul class="daftar-menu">
             <li class="pencarian">
                 <i class="bx bx-search"></i>
-                <input type="text" placeholder="Search Novel...">
+                <form id="searchForm" action="../titles-page/index.php" method="get">
+                    <input type="text" placeholder="Search Novel...">
+                </form>
             </li>
             <li>
                 <a href="../home/index.php">
@@ -152,6 +154,19 @@
                     <span class="nama-menu">About Us</span>
                 </a>
             </li>
+            <?php
+                $admin = "adminplotpool"; 
+                if ($_SESSION['username'] === $admin) {
+                    ?>
+                    <li>
+                        <a href="../upload_novel/index.php">
+                            <i class="bx bx-cloud-upload"></i>
+                            <span class="nama-menu">Uploads</span>
+                        </a>
+                    </li>
+                    <?php
+                }
+            ?>
         </ul>
 
         <div class="info-profil">

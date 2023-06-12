@@ -12,16 +12,16 @@ body{
     position: relative;
     min-height: 100vh;
     width: 100%;
-    background:  linear-gradient(to top, #171542 ,  #292677 );
+    background:  linear-gradient(to top,  #0b0a2a ,   #131146  );
 }
 
 html{
     scroll-behavior: smooth;
-    background: #171542;
+    background:  #0b0a2a;
 }
 
 .swal-modal{
-    background-color: #6C4AB6;
+    background-color:  #0b0a2a;
 }
 
 .swal-title{
@@ -38,7 +38,7 @@ html{
     left: 0;
     height: 100%;
     width: 240px;
-    background:  #292677 ;
+    background:   #131146 ;
     padding: 6px 14px;
     transition: all 0.5s ease;
 }
@@ -179,7 +179,7 @@ html{
     height: 60px;
     background: none;
     transition: all 0.4s ease;
-    background: #171542;
+    background:  #0b0a2a ;
 }
 
 .sidebar .info-profil .profil .bx{

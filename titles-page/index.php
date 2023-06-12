@@ -129,6 +129,19 @@
                     <span class="nama-menu">About Us</span>
                 </a>
             </li>
+            <?php
+                $admin = "adminplotpool"; 
+                if ($_SESSION['username'] === $admin) {
+                    ?>
+                    <li>
+                        <a href="../upload_novel/index.php">
+                            <i class="bx bx-cloud-upload"></i>
+                            <span class="nama-menu">Uploads</span>
+                        </a>
+                    </li>
+                    <?php
+                }
+            ?>
         </ul>
         
         <div class="info-profil">

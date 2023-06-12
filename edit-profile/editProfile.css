@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap');
 
+:root {
+    --primary: #1338f0 ;
+    --primary-hover: #132df6;                
+    --secondary: #dcdcdc;
+    --secondary-hover: #B8A1D9;
+    --aura: #9265CA80;
+    --background: #261E5A;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -11,10 +20,11 @@ body{
     position: relative;
     min-height: 100vh;
     width: 100%;
-    background: linear-gradient(to top, #171542, #292677)
+    background-color: #0b0a2a;
 }
+
 .swal-modal{
-    background-color: #171542;
+    background-color: #0b0a2a;
 }
 
 .swal-title{
@@ -36,7 +46,7 @@ html{
     left: 0;
     height: 100%;
     width: 240px;
-    background: #292677;
+    background:   #131146 ;
     padding: 6px 14px;
     transition: all 0.5s ease;
 }
@@ -177,7 +187,7 @@ html{
     height: 60px;
     background: none;
     transition: all 0.4s ease;
-    background: #171542;
+    background: #0b0a2a;
 }
 
 .sidebar .info-profil .profil .bx{
@@ -230,16 +240,17 @@ html{
 
 .halaman-info{
     position: absolute;
+    background: linear-gradient(to top,   #0b0a2a  ,   #131146  ) ;
     height: 100%;
     width: calc(100% - 250px);
-    left: 250px;
+    left: 240px;
     transition: all 0.5s ease;
     
 }
 
 .sidebar ~ .halaman-info{
-    width: calc(100% - 240px);
-    left: 250px;
+    width: calc(100% - 260px);
+    left: 260px;
 }
 
 .halaman-info h3{
@@ -252,50 +263,248 @@ html{
 
 /* halamam */
 
-.halaman-info .container .profile-picture {
-    width: 150px; 
-    height: 150px;
-    border-radius: 50%; 
-    overflow: hidden;
+.container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container .centering h1{
+    color: var(--secondary);
+}
+
+.container .background{
+    content: "";
+    position: absolute;
+    height: 100vh;
+
+    display: grid;
+    place-items: center;
+    background-image: url(universe.jpg);
+    opacity: 0.5;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.container .centering{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 80vh;
-    margin-top: 5vh;
+    height: 100vh;
+
 }
 
-.halaman-info .container .profile-picture img{
-    width: 100%; 
-    height: 100%;
+.container .form-box{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 16px;
+    background-color: var(--background);
+    border: 1px solid var(--primary);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px var(--aura);
+    min-width: 280px;
+    max-width: 460px;
+    width: 100%;
+    padding: 32px;
+}
+
+.container .centering .header .foto-profil{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
-.halaman-info .container .user-name{
-    margin-top: 3vh;
-    margin-left: 5vh;
+.container .centering .header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.container .centering .input-profile .simpan-profil{
+    display: inline-block;
+    font-size: 1em;
+    -webkit-appearance: none;
+    padding: 0.7em 1em;
+    appearance: none;
+    margin-top: 20px;
+    background-color: #140de4;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px rgba(32, 49, 237, 0.5);
+}
+
+.container .centering .input-profile .simpan-profil:focus{
+    outline: 0;
+}
+
+.container .centering .input-profile .simpan-profil:before,
+.container .centering .input-profile .simpan-profil:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+}
+
+.container .centering .input-profile .simpan-profil:before{
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff1414 20%, transparent 30%), radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.container .centering .input-profile .simpan-profil:after{
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff1414 15%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.container .centering .input-profile .simpan-profil:active{
+    transform: scale(0.9);
+    background-color: #1648eb;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+/* HAPUS PROFIL */
+
+.container .centering .input-profile .hapus-profil{
+    display: inline-block;
+    font-size: 1em;
+    -webkit-appearance: none;
+    padding: 0.7em 1em;
+    appearance: none;
+    margin-top: 20px;
+    background-color: #cf0505;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px rgba(239, 15, 15, 0.5);
+}
+
+.container .centering .input-profile .hapus-profil:focus{
+    outline: 0;
+}
+
+.container .centering .input-profile .hapus-profil:before,
+.container .centering .input-profile .hapus-profil:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+}
+
+.container .centering .input-profile .hapus-profil:before{
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff1414 20%, transparent 30%), radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.container .centering .input-profile .hapus-profil:after{
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff1414 15%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%), radial-gradient(circle, #ff1414 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.container .centering .input-profile .hapus-profil:active{
+    transform: scale(0.9);
+    background-color: #ff1414;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+.container .centering .input-profile .upload-profile{
+    color: white;
+}
+
+
+
+.container .centering .submit-status{
+    background-color: var(--primary);
+    color: var(--background);
+    white-space: nowrap;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 16px;
+    line-height: 50px;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: .025em;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 800;
+    min-height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.15);
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
 }
 
-.halaman-info .container .user-name .nama-user{
-    font-size: 4vh;
-    text-align: center;
-}
-
-.halaman-info .container .user-status{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.halaman-info .container .user-status input{
+.container .centering .box-input input[type="text"]{
+    color: var(--secondary);
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 100%;
+    width: 100%;
+    border: 1px solid var(--secondary);
     height: 50px;
-    width: 30%;
-    background-color: rgba(226, 222, 222, 0.577);
-    border-radius: 3px;
-    padding: 0 10px;
+    letter-spacing: .03rem;
+    background-color: transparent;
+    outline: none;
+    transition: .25s;
+    border-radius: 8px;
+    text-indent: 20px;
     margin-top: 8px;
-    font-size: 14px;
-    font-weight: 300;
 }
+
+.container .centering .submit-status{
+    background-color: var(--primary-hover);
+}
+
+.container .centering .box-input{
+    position: relative;
+}
+
+.container .centering .box-input input::-webkit-input-placeholder { 
+    color: var(--secondary-hover);
+}
+
+.container .centering .box-input:focus{
+    border: 1px solid var(--primary);
+}
+
+
+
+
+
+
+
+
+
+

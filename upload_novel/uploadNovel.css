@@ -1,71 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap');
 
-/* :root {
-    --rich-black-fogra-29: hsl(225, 25%, 9%);
-    --rich-black-fogra-39: hsl(170, 21%, 5%);
-    --raisin-black: hsl(228, 13%, 15%);
-    --eerie-black: hsl(207, 19%, 11%);
-    --light-gray: hsl(0, 3%, 80%);
-    --gunmetal-1: hsl(229, 15%, 21%);
-    --gunmetal-2: hsl(216, 22%, 18%);
-    --gainsboro: hsl(0, 7%, 88%);
-    --citrine: hsl(57, 97%, 45%);
-    --xiketic: hsl(253, 21%, 13%);
-    --gray-x: hsl(0, 0%, 74%);
-    --white: hsl(0, 100%, 100%);
-    --black: hsl(0, 0%, 0%);
-    --jet: hsl(0, 0%, 20%);
-    --live-indicator-shadow: hsla(0, 79%, 63%, 0.5);
-    --rich-black-fogra-30:   hsl(219, 32%, 10%);
-    --rich-black-fogra-29:   hsl(222, 25%, 10%);
-    --live-indicator:        hsl(0, 79%, 63%);
-    --oxford-blue-50:        hsla(218, 39%, 14%, 0.8);
-    --oxford-blue:           hsl(218, 39%, 14%);
-    --light-azure:           hsl(214, 84%, 56%);
-    --off-white:             hsl(0, 0%, 88%);
-    --yellow:                hsl(45, 100%, 54%);
-    --white:                 hsl(0, 0%, 100%);
-    --azure:                 hsl(211, 100%, 50%);
-
-
-    --ff-poppins: 'Poppins', sans-serif;
-
-    --fs-1: 36px;
-    --fs-2: 32px;
-    --fs-3: 30px;
-    --fs-4: 24px;
-    --fs-5: 20px;
-    --fs-6: 18px;
-    --fs-7: 16px;
-    --fs-8: 15px;
-    --fs-9: 14px;
-    --fs-10: 13px;
-    --fs-11: 12px;
-    --fs-12: 11px;
-    --ff-inter: "Inter", sans-serif;
-
-    --section-heading: 40px;
-    --fs-lg:           22px;
-    --fs-md:           17px;
-    --fs-sm:           14px;
-    --fs-x-sm:         12px;
-
-    --fw-7: 700;
-    --fw-6: 600;
-    --fw-5: 500;
-
-    --fw-500: 500;
-    --fw-700: 700;
-
-    --transition-1: 0.15s ease;
-    --transition-2: 0.25s ease-in;
-
-    --section-padding: 100px;
-
-    --px: 120px;
-
-} */
-
 *{
     margin: 0;
     padding: 0;
@@ -74,7 +8,7 @@
 }
 
 .swal-modal{
-    background-color: #6C4AB6;
+    background-color: #0b0a2a;
 }
 
 .swal-title{
@@ -89,7 +23,7 @@ body{
     position: relative;
     min-height: 100vh;
     width: 100%;
-    background-color: #171542;
+    background-color: #0b0a2a;
 }
 
 html{
@@ -102,7 +36,7 @@ html{
     left: 0;
     height: 100%;
     width: 240px;
-    background:  #292677;
+    background:   #131146 ;
     padding: 6px 14px;
     transition: all 0.5s ease;
 }
@@ -244,7 +178,7 @@ html{
     height: 60px;
     background: none;
     transition: all 0.4s ease;
-    background: #171542  ;
+    background: #0b0a2a;
 }
 
 .sidebar .info-profil .profil .bx{
@@ -297,7 +231,7 @@ html{
 
 .halaman-home{
     position: absolute;
-    background: linear-gradient(to top,  #171542  ,  #292677 ) ;
+    background: linear-gradient(to top,   #0b0a2a  ,   #131146  ) ;
     height: 100%;
     width: calc(100% - 728px);
     left: 728px;

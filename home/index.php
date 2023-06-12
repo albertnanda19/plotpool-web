@@ -128,19 +128,18 @@
             </li>
 
             <?php
-    // Cek username saat login
-    $admin = "adminplotpool"; // Ganti dengan username yang sesuai dengan aplikasi Anda
-    if ($_SESSION['username'] === $admin) {
-        ?>
-        <li>
-            <a href="../upload_novel/index.php">
-                <i class="bx bx-cloud-upload"></i>
-                <span class="nama-menu" onclick="toUploads()">Uploads</span>
-            </a>
-        </li>
-        <?php
-    }
-    ?>
+                $admin = "adminplotpool"; 
+                if ($_SESSION['username'] === $admin) {
+                    ?>
+                    <li>
+                        <a href="../upload_novel/index.php">
+                            <i class="bx bx-cloud-upload"></i>
+                            <span class="nama-menu">Uploads</span>
+                        </a>
+                    </li>
+                    <?php
+                }
+            ?>
         </ul>
 
         <div class="info-profil">
@@ -168,26 +167,26 @@
         <section class="popular-title">
             <div class="popular-title-box">
                 <figure class="popular-title-img">
-                    <img src="img/popular-title-novel-1.jpeg" alt="">
+                    <img src="img/popular-title-novel-1.jpg" alt="">
                 </figure>
                 <div class="popular-title-konten">
                     <div class="info-popular-title">
-                        <h1 class="h1 judul-popular-title">Tentang Kamu</h1>
+                        <h1 class="h1 judul-popular-title">Bumi Manusia</h1>
 
                         <div class="detail-rating">
                             <div class="info-genre">
-                                <a class="genre genre-fill" href="#">Fiksi</a>
+                                <a class="genre genre-fill" href="#">Drama Sejarah</a>
                             </div>
                         </div>
 
                         <p class="sinopsis">
-                            Tentang Kamu, merupakan novel karya Tere Liye. Novel tersebut menceritakan kisah hidup wanita dari ...
+                            Bumi Manusia adalah sebuah novel fiksi dengan genre drama history yang memiliki setting di kehidupan periode penjajahan Belanda. Dalam buku ini, dikisahkan pula kehidupan seorang pemuda Pribumi bernama Minke. Minke bersekolah di H.B.S atau Hogere Burgerschool, yaitu setingkat dengan Sekolah Menengah Akhir (SMA) dan hanya diperuntukan bagi orang Eropa, Belanda, dan Elite Pribumi.
                         </p>
 
                         <div class="detail-action">
                             <button class="btn btn-read" onclick="seeMore()">
                                     <ion-icon name="play"></ion-icon>
-                                    <span>See More</span>
+                                    <span onclick="directPopularTitle()">See More</span>
                             </button>
                         </div>
                     </div>
@@ -213,6 +212,8 @@
                     $sql = "SELECT * FROM novel ORDER BY id DESC";
                     $result = $koneksi->query($sql);
 
+                    $hitung = 0;
+
                     if($result->num_rows > 0)
                     {
                         while($row = $result->fetch_assoc())
@@ -237,6 +238,13 @@
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';
+
+                            $hitung++;
+
+                            if($hitung >= 12)
+                            {
+                                break;
+                            }
                         }
                     }
                     $koneksi->close();
@@ -265,6 +273,8 @@
                 window.location.href = `../titles-page/index.php?search=${encodeURIComponent(keyword)}`;
             }
         });
+
+        
     </script>
 </body>
 </html>
