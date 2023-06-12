@@ -426,14 +426,14 @@ html{
     margin-bottom: 60px;
     -webkit-appearance: none;
     appearance: none;
-    background-color: #ff0081;
+    background-color: #1D50E7;
     color: #fff;
     border-radius: 4px;
     border: none;
     cursor: pointer;
     position: relative;
     transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+    box-shadow: 0 2px 25px rgba(51, 0, 255, 0.5);
     position: absolute;
 }
 
@@ -457,20 +457,20 @@ html{
 .halaman-home .popular-title .popular-title-box .detail-action .btn-read:before{
     display: none;
     top: -75%;
-    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-image: radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, transparent 20%, #3562EA 20%, transparent 30%), radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, transparent 10%, #3562EA 15%, transparent 20%), radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, #3562EA 20%, transparent 20%);
     background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
 }
 
 .halaman-home .popular-title .popular-title-box .detail-action .btn-read:after{
     display: none;
     bottom: -75%;
-    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-image: radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, transparent 10%, #3562EA 15%, transparent 20%), radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, #3562EA 20%, transparent 20%), radial-gradient(circle, #3562EA 20%, transparent 20%);
     background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
 }
 
 .halaman-home .popular-title .popular-title-box .detail-action .btn-read:active{
     transform: scale(0.9);
-    background-color: #e60074;
+    background-color: #2959E8;
     box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
 }
 
