@@ -174,14 +174,11 @@
                     die('Koneksi Gagal: '.$koneksi->connect_error);
                 }
 
-                // Periksa apakah ada parameter pencarian yang dikirimkan
                 if(isset($_GET['search']) && !empty($_GET['search'])) {
                     $search = $_GET['search'];
 
-                    // Gunakan query dengan ORDER BY untuk menampilkan hasil pencarian di bagian atas
                     $sql = "SELECT * FROM novel WHERE judul LIKE '%$search%' ORDER BY CASE WHEN judul = '$search' THEN 0 ELSE 1 END, judul";
                 } else {
-                    // Jika tidak ada parameter pencarian, tampilkan semua novel
                     $sql = "SELECT * FROM novel";
                 }
 
@@ -201,7 +198,7 @@
                         echo '<div>';
                         echo '<h2>' . $judul . '</h2>';
                         echo '<h3>by ' . $penulis . '</h3>';
-                        echo '<a href="../info_novel/index.php?id=' . $id . '"><button>Read Now</button></a>'; 
+                        echo '<a href="../info_novel/index.php?id=' . $id . '"><button>Details</button></a>'; 
                         echo '</div>';
                         echo '</div>';
                     }

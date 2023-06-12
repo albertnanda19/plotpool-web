@@ -147,6 +147,11 @@
 
                     $koneksi->close();
                 ?>
+
+                <!-- <a href="../info_novel/index.php?id= <?php $randomNovelID ?>">
+                    <i class="bx bx-crosshair"></i>
+                    <span class="nama-menu">Random</span>
+                </a> -->
             </li>
             <li>
                 <a href="../about-developers-page/index.php">
