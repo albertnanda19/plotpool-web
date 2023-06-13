@@ -66,7 +66,7 @@
                 VALUES ('$judul', '$penulis', '$sampul','$genre', '$rating_usia', $tahun_terbit, '$sinopsis', '$file_pdf')";
 
         if ($koneksi->query($sql) === TRUE) {
-            echo "Data novel berhasil disimpan.";
+            echo "";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }

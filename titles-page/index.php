@@ -208,10 +208,10 @@
                         <style>
                             h1{
                                 color: white;
-                                
+                                margin-top: 270px;
                             }
                         </style>
-                        <h1>Novel tidak ditemukan</h1>
+                        <h1>Novel tidak ditemukan :(</h1>
                     HTML;
                 }
             ?>
