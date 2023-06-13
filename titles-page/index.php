@@ -203,7 +203,16 @@
                         echo '</div>';
                     }
                 } else {
-                    echo '<p>Tidak ada data novel yang ditemukan.</p>';
+                    // echo '<p>Tidak ada data novel yang ditemukan.</p>';
+                    echo <<<HTML
+                        <style>
+                            h1{
+                                color: white;
+                                
+                            }
+                        </style>
+                        <h1>Novel tidak ditemukan</h1>
+                    HTML;
                 }
             ?>
         </div>
